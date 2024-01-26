@@ -40,13 +40,13 @@ app.get("/pokemon/:id", async (req, res) => {
 
 //ADD NEW POKEMON
 app.post("/pokemon", async (req, res) => {
-    const { pokemonId, name, type, exp } = req.body;
+    const { pokemonId, name, type, experience } = req.body;
     try {
         const response = await axios.post("https://msn-labb2-webbutv-netap.azurewebsites.net/pokemon", { 
             pokemonId, 
             name, 
             type, 
-            exp 
+            experience 
         }, { httpsAgent });
         res.json(response.data);
     } catch (error) {
